@@ -12,6 +12,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Prompt results (sample outputs, not app code) and generated media.
+    "content/**",
+    "public/results/**",
+    "test-results/**",
   ]),
 ]);
 

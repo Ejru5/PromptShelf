@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Command palette</title>
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body { min-height: 100vh; font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; background: #e7e5e4; display: grid; place-items: start center; padding: 56px 16px; color: #1c1917; }
+  .backdrop { position: fixed; inset: 0; background: linear-gradient(180deg, rgba(28,25,23,.08), rgba(28,25,23,.25)); }
+  .palette { position: relative; width: 100%; max-width: 620px; background: #fff; border-radius: 18px; box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 40px 80px -20px rgba(28,25,23,.45); overflow: hidden; }
+  .search { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border-bottom: 1px solid #f0efed; }
+  .search input { flex: 1; border: 0; outline: none; font: inherit; font-size: 16px; }
+  kbd { font-family: ui-monospace, monospace; font-size: 11px; color: #78716c; background: #f5f5f4; border: 1px solid #e7e5e4; border-radius: 6px; padding: 2px 6px; }
+  .list { max-height: 340px; overflow-y: auto; padding: 8px; }
+  .group { font-size: 11px; font-weight: 600; color: #a8a29e; text-transform: uppercase; letter-spacing: .08em; padding: 10px 10px 6px; }
+  .item { display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 10px; cursor: pointer; font-size: 14px; }
+  .item .ic { width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; background: #f5f5f4; flex: none; }
+  .item .hint { margin-left: auto; color: #a8a29e; font-size: 12px; }
+  .item[aria-selected="true"] { background: #1c1917; color: #fff; }
+  .item[aria-selected="true"] .ic { background: rgba(255,255,255,.12); }
+  .item[aria-selected="true"] .hint { color: #d6d3d1; }
+  .empty { padding: 32px; text-align: center; color: #a8a29e; font-size: 14px; }
+  .foot { display: flex; gap: 16px; padding: 10px 16px; border-top: 1px solid #f0efed; font-size: 12px; color: #78716c; background: #fafaf9; }
+  mark { background: #fef08a; color: inherit; border-radius: 3px; }
+  .item[aria-selected="true"] mark { background: #a16207; }
+</style>
+</head>
+<body>
+<div class="backdrop"></div>
+<div class="palette" role="dialog" aria-label="Command palette">
+  <div class="search">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#78716c" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input id="q" placeholder="Type a command or search…" autocomplete="off" aria-controls="list" autofocus>
+    <kbd>esc</kbd>
+  </div>
+  <div class="list" id="list" role="listbox"></div>
+  <div class="foot"><span><kbd>↑</kbd> <kbd>↓</kbd> navigate</span><span><kbd>↵</kbd> open</span><span><kbd>⌘</kbd> <kbd>K</kbd> toggle</span></div>
+</div>
+<script>
+  const items = [
+    { g: 'Suggestions', t: 'Create new project', i: '✦', h: '⌘ N' },
+    { g: 'Suggestions', t: 'Invite teammates', i: '✉', h: '⌘ I' },
+    { g: 'Suggestions', t: 'Open settings', i: '⚙', h: '⌘ ,' },
+    { g: 'Projects', t: 'Website redesign', i: '◧', h: 'Project' },
+    { g: 'Projects', t: 'Q4 launch plan', i: '◨', h: 'Project' },
+    { g: 'Projects', t: 'Mobile onboarding', i: '◩', h: 'Project' },
+    { g: 'People', t: 'Ana Ruiz', i: '☺', h: 'Designer' },
+    { g: 'People', t: 'Jordan Lee', i: '☺', h: 'Engineer' },
+    { g: 'Help', t: 'Keyboard shortcuts', i: '⌨', h: '?' },
+  ];
+  const list = document.getElementById('list');
+  const q = document.getElementById('q');
+  let sel = 0, shown = items;
+  const esc = (s) => s.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[c]);
+  function render() {
+    const term = q.value.trim().toLowerCase();
+    shown = items.filter((it) => it.t.toLowerCase().includes(term));
+    sel = Math.min(sel, Math.max(0, shown.length - 1));
+    if (!shown.length) { list.innerHTML = '<p class="empty">No results for “' + esc(q.value) + '”</p>'; return; }
+    let html = '', last = '';
+    shown.forEach((it, i) => {
+      if (it.g !== last) { html += '<p class="group">' + it.g + '</p>'; last = it.g; }
+      let label = esc(it.t);
+      if (term) { const k = it.t.toLowerCase().indexOf(term); label = esc(it.t.slice(0, k)) + '<mark>' + esc(it.t.slice(k, k + term.length)) + '</mark>' + esc(it.t.slice(k + term.length)); }
+      html += '<div class="item" role="option" data-i="' + i + '" aria-selected="' + (i === sel) + '"><span class="ic">' + it.i + '</span>' + label + '<span class="hint">' + it.h + '</span></div>';
+    });
+    list.innerHTML = html;
+  }
+  q.addEventListener('input', () => { sel = 0; render(); });
+  q.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown') { sel = (sel + 1) % shown.length; render(); e.preventDefault(); }
+    if (e.key === 'ArrowUp') { sel = (sel - 1 + shown.length) % shown.length; render(); e.preventDefault(); }
+  });
+  list.addEventListener('mousemove', (e) => { const el = e.target.closest('.item'); if (el && +el.dataset.i !== sel) { sel = +el.dataset.i; render(); } });
+  render();
+</script>
+</body>
+</html>

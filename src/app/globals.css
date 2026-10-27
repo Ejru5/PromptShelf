@@ -1,26 +1,312 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ------------------------------------------------------------------
+   Promptshelf design tokens
+   Warm paper canvas, near-black ink, one colour family per category
+   (category colours are applied per element via --accent/--tint/--deep,
+   see src/config/categories.ts).
+   ------------------------------------------------------------------ */
 
+/* Category palette passthrough. `inline` makes utilities reference --accent etc.
+   directly, so a per-element style={paletteVars(...)} actually takes effect. */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-accent: var(--accent, #141414);
+  --color-title: var(--title, #141414);
+  --color-tint: var(--tint, #e9e7e2);
+  --color-deep: var(--deep, #141414);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@theme {
+  /* Neutrals */
+  --color-canvas: #f1f0ed;
+  --color-canvas-2: #e9e7e2;
+  --color-paper: #ffffff;
+  --color-ink: #141414;
+  --color-ink-2: #4c4a46;
+  --color-ink-3: #696660;
+  --color-line: #e3e1dc;
+  --color-line-2: #cfccc5;
+
+  /* Type families (CSS variables provided by next/font in layout.tsx) */
+  --font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-newsreader), ui-serif, Georgia, serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "SFMono-Regular", monospace;
+  --font-numeric: var(--font-roboto-mono), var(--font-jetbrains), ui-monospace, monospace;
+  --font-hand: var(--font-caveat), "Comic Sans MS", cursive;
+
+  /* Display sizes — fluid so the big editorial headings scale with the viewport */
+  --text-display-xl: clamp(3.25rem, 2rem + 6vw, 8rem);
+  --text-display-xl--line-height: 0.92;
+  --text-display-xl--letter-spacing: -0.045em;
+  --text-display: clamp(2.5rem, 1.6rem + 4vw, 5.25rem);
+  --text-display--line-height: 0.95;
+  --text-display--letter-spacing: -0.04em;
+  --text-heading: clamp(1.875rem, 1.4rem + 1.8vw, 3rem);
+  --text-heading--line-height: 1.05;
+  --text-heading--letter-spacing: -0.02em;
+
+  /* Shape */
+  --radius-card: 1.5rem;
+  --radius-inner: 1rem;
+  --radius-cover: 0.375rem;
+
+  /* Depth */
+  --shadow-soft: 0 1px 2px rgb(20 20 20 / 0.04), 0 10px 30px -18px rgb(20 20 20 / 0.18);
+  --shadow-lift: 0 2px 4px rgb(20 20 20 / 0.05), 0 22px 44px -20px rgb(20 20 20 / 0.28);
+  --shadow-cover:
+    0 1px 1px rgb(20 20 20 / 0.08), 0 12px 24px -10px rgb(20 20 20 / 0.35),
+    0 30px 50px -30px rgb(20 20 20 / 0.35);
+  --shadow-pop: 0 0 0 1px rgb(20 20 20 / 0.06), 0 18px 40px -12px rgb(20 20 20 / 0.3);
+
+  /* Motion */
+  --ease-out-soft: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --animate-fade-up: fade-up 500ms var(--ease-out-soft) both;
+  --animate-pop-in: pop-in 380ms var(--ease-spring) both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes pop-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px) scale(0.96) rotate(-2deg);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  :root {
+    --duration-fast: 150ms;
+    --duration-base: 250ms;
+    --duration-slow: 400ms;
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  ::selection {
+    background: #141414;
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+@utility font-numeric {
+  /* Roboto Mono has a slashed zero by design — the WOVE-style "Ø5" for the dial */
+  font-family: var(--font-numeric);
+  font-feature-settings: "tnum" 1;
+}
+
+@utility text-balance-safe {
+  text-wrap: balance;
+}
+
+@utility paper-grain {
+  /* Very subtle grain so large flat panels don't look digital-flat */
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .035 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------------------------------------------------------ result viewers */
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateX(24px) rotate(1.5deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes page-back {
+  from {
+    opacity: 0;
+    transform: translateX(-24px) rotate(-1.5deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Sample text outputs — typeset like a page of writing. */
+.prose-output {
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--color-ink-2);
+}
+.prose-output > * + * {
+  margin-top: 0.9em;
+}
+.prose-output h1,
+.prose-output h2,
+.prose-output h3 {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+.prose-output h1 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-top: 0.6em;
+}
+.prose-output h2 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-deep);
+  margin-top: 2em;
+}
+.prose-output h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 1.6em;
+}
+.prose-output strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+.prose-output ul,
+.prose-output ol {
+  padding-left: 1.25em;
+}
+.prose-output ul {
+  list-style: disc;
+}
+.prose-output ol {
+  list-style: decimal;
+}
+.prose-output li + li {
+  margin-top: 0.3em;
+}
+.prose-output li::marker {
+  color: var(--color-accent);
+}
+.prose-output hr {
+  border: 0;
+  border-top: 1px dashed var(--color-line-2);
+  margin: 1.8em 0;
+}
+.prose-output em {
+  color: var(--color-ink-3);
+}
+.prose-output code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--color-canvas);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+/* Highlighted code with line numbers */
+.code-output pre {
+  background: transparent !important;
+  counter-reset: line;
+  font-family: var(--font-mono);
+  line-height: 1.7;
+  width: max-content;
+  min-width: 100%;
+  outline: none;
+}
+.code-output .line {
+  display: inline-block;
+  padding-right: 1.25rem;
+}
+.code-output .line::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 3rem;
+  padding-right: 1rem;
+  text-align: right;
+  color: rgb(255 255 255 / 0.28);
+  user-select: none;
+}
+
+/* Copy "peel": the prompt card lifts like a sticky note being pulled off, then settles. */
+@keyframes peel {
+  0% {
+    transform: none;
+  }
+  30% {
+    transform: translateY(-8px) rotate(-2.5deg) skewX(-1deg);
+    box-shadow: 0 30px 50px -20px rgb(20 20 20 / 0.35);
+  }
+  60% {
+    transform: translateY(2px) rotate(0.6deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+/* Card → detail shared-element morph (see components/prompt/morph.tsx) */
+::view-transition-group(.morph) {
+  animation-duration: 420ms;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+::view-transition-image-pair(.morph) {
+  animation-name: via-blur;
+}
+@keyframes via-blur {
+  30% {
+    filter: blur(3px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
 }

@@ -1,0 +1,362 @@
+{
+  "content/prompts/documents/client-invoice/page-1.jpg": {
+    "hash": "5e10966ef443ef5c",
+    "width": 1191,
+    "height": 1685,
+    "blur": "data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAACwAQCdASoLABAAA4BaJaQAAudGpbAAAP736a3B8cDQ6mvsuYnoEAAA"
+  },
+  "content/prompts/documents/one-page-resume/page-1.jpg": {
+    "hash": "67d475870bd39649",
+    "width": 1191,
+    "height": 1685,
+    "blur": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAQAgCdASoLABAAA4BaJZQC7H8AFckbzfgAAP7d7wH2x0XHO942gZTrxJY5Bpl//b311F+ZGHdAAA=="
+  },
+  "content/prompts/documents/press-release/page-1.jpg": {
+    "hash": "575ada6d5c78947c",
+    "width": 1191,
+    "height": 1685,
+    "blur": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADwAQCdASoLABAAA4BaJaQAAu1/tNolYAAA/vUi5Yd40eXjEpfJUHAOZkAAAA=="
+  },
+  "content/prompts/documents/product-one-pager/page-1.jpg": {
+    "hash": "2f4fd9781262c291",
+    "width": 1191,
+    "height": 1685,
+    "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwAQCdASoLABAAA4BaJZQC7ADa6THaKKAA/vBNEJoOL0ToCjqZrjH4if2WQ4rZQdd00sthl4SNdmIc3qmKhqLUD5u0HWNZUmNYd37CWH+YjI+ZZjH5oIbAAAA="
+  },
+  "content/prompts/documents/project-proposal/page-1.jpg": {
+    "hash": "3eeb1204c4a25896",
+    "width": 1191,
+    "height": 1685,
+    "blur": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAACwAQCdASoLABAAA4BaJQAAU28auRKAAP7uob2H9DL+xZ+hdANWPXnQwX0NF5eAAAA="
+  },
+  "content/prompts/documents/project-proposal/page-2.jpg": {
+    "hash": "ee87d8de41f4d3cd",
+    "width": 1191,
+    "height": 1685,
+    "blur": "data:image/webp;base64,UklGRioAAABXRUJQVlA4IB4AAAAwAQCdASoLABAAA4BaJaQAA3AA/vS0VjoKx2gwAAA="
+  },
+  "content/prompts/documents/workshop-handout/page-1.jpg": {
+    "hash": "522a41714c8b0348",
+    "width": 1191,
+    "height": 1685,
+    "blur": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACQAQCdASoLABAAA4BaJZwAAudF3kAA/vUaPQlyICC3AFNP7dU41A9aKWx46BAA"
+  },
+  "content/prompts/images/day-to-night-city-edit/day.jpg": {
+    "hash": "a568d26e6e677e3c",
+    "width": 1600,
+    "height": 900,
+    "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoQAAkAA4BaJaACdACkspKuAAD+yNk4Oernju3O3xRcAzLQVKgKBVc55N8xVp0xx+dV/bPh5AAAAA=="
+  },
+  "content/prompts/images/day-to-night-city-edit/night.jpg": {
+    "hash": "a9be16ecd9ad7e72",
+    "width": 1600,
+    "height": 900,
+    "blur": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACwAQCdASoQAAkAA4BaJYwAAudLRTGAAP71lS1bgoUQB30yMH0A2+F/3INGAAAA"
+  },
+  "content/prompts/images/golden-hour-desert-portrait/blue-hour.jpg": {
+    "hash": "1ac9c3f0e3febe10",
+    "width": 1500,
+    "height": 1000,
+    "blur": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAQAgCdASoQAAsAA4BaJYgCdAEO1Hu2uW8AAP7xH1PP5Li+bbZX4zK/I7BjIq3EzWuLzppYTFewAA=="
+  },
+  "content/prompts/images/golden-hour-desert-portrait/golden.jpg": {
+    "hash": "ddb9d510bd73e7b4",
+    "width": 1500,
+    "height": 1000,
+    "blur": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADQAQCdASoQAAsAA4BaJbACdAEOpCfFcAD+5FixCCaUGPSgPZpcnr+frTklOsoHlF/iVK5wjpU++PyZ4NNPt488AAA="
+  },
+  "content/prompts/images/golden-hour-desert-portrait/midday.jpg": {
+    "hash": "a2771e1d6377f521",
+    "width": 1500,
+    "height": 1000,
+    "blur": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAAAQAgCdASoQAAsAA4BaJbACdAEPcmSlPkQAAP38fKyXzO4sXJKgFYixpk4mAAsCJsNgCmPW8AyHdfg7OL4y1+IT5q8gAA=="
+  },
+  "content/prompts/images/isometric-cozy-room/day.jpg": {
+    "hash": "65a117859eabc490",
+    "width": 1200,
+    "height": 1200,
+    "blur": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAABQAgCdASoQABAAA4BaJQBOj+ADEp8ySG14r0AA/vYTgjGpvgc4brfs79BZmBlb4yJarG8XSc4rZqGTsHdU3+J09t9DT3YEuWKk5v49QWBjpe5AIqAAAA=="
+  },
+  "content/prompts/images/isometric-cozy-room/night.jpg": {
+    "hash": "d7874920fd910b1c",
+    "width": 1200,
+    "height": 1200,
+    "blur": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADwAQCdASoQABAAA4BaJZgAAqH0Vyf9uAAA/vDe+vz1xIlVojBkxbXY2XqXVj/VqZ1XvYA17c4fxSDfNR0vnbOygI6AAA=="
+  },
+  "content/prompts/images/perfume-bottle-on-pastel-podium/mint.jpg": {
+    "hash": "966340853d4b7efd",
+    "width": 1200,
+    "height": 1500,
+    "blur": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADwAQCdASoNABAAA4BaJYwC7AEO+olf4UAA/vTLmxXPBRob0QYXHPvqrgRua4Lk123iTS8mMAA="
+  },
+  "content/prompts/images/perfume-bottle-on-pastel-podium/peach.jpg": {
+    "hash": "a939c8da7e68a757",
+    "width": 1200,
+    "height": 1500,
+    "blur": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADQAQCdASoNABAAA4BaJQBOgCHfS57ZwAD+82v6h6BgM/E0uFtpBMvWA9zk+2o4w5Ro1FFAYscAAA=="
+  },
+  "content/prompts/images/sketch-to-watercolor/sketch.jpg": {
+    "hash": "30855aa1284d3a76",
+    "width": 1500,
+    "height": 1000,
+    "blur": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAABQAQCdASoQAAsAA4BaJZQABDOAAP7xwddEFMKK4E+ndgAA"
+  },
+  "content/prompts/images/sketch-to-watercolor/watercolor.jpg": {
+    "hash": "25bd187de60be4b8",
+    "width": 1500,
+    "height": 1000,
+    "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAQCdASoQAAsAA4BaJZgCdAEO5Z21VgAA/vN0eDL+04tq/y9Fb3U3yIimDu7I9g4bA+2Hxnx6TDH0sg/iGGihJIMg6KMY8RIL1EvugAA="
+  },
+  "content/prompts/images/swiss-style-event-poster/blue.jpg": {
+    "hash": "da2fe667d601dec4",
+    "width": 1200,
+    "height": 1600,
+    "blur": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAABQAgCdASoMABAAA4BaJbACdH8AFBpXlxzORAAA/vIJDw8LCuAiqXeAV8kSUsSEdUBqi/rPJYskPdkR17F5jvKjkWJOfbFOFWLQ5iOpCBC2o+i+E5EThmEOmLHPyAh4/eerWjTtPfUHMvntraKiymaAAAA="
+  },
+  "content/prompts/images/swiss-style-event-poster/red.jpg": {
+    "hash": "551ceb80170ea497",
+    "width": 1200,
+    "height": 1600,
+    "blur": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAABQAgCdASoMABAAA4BaJbACdAYuluOYRtkMS5AA/vIIh/wLM4J4NqSbfRzECBfXxjRajucYHl1wa5PlohWh7pJgXtV55GcevLCV53FuDxdegzOMBpigJXvH/3+nw5CK7t3B/7/8nujmnvXjhiCAAA=="
+  },
+  "content/prompts/motion/geometric-logo-reveal/loop.mp4": {
+    "hash": "d67097ad3a088657",
+    "width": 720,
+    "height": 720,
+    "duration": 4
+  },
+  "content/prompts/motion/geometric-logo-reveal/loop.poster.jpg": {
+    "hash": "8e08e15072a1dcf0",
+    "width": 720,
+    "height": 720,
+    "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAQCdASoQABAAA4BaJbACw7EO+aiN2+AA/vQes/WAf6vGL3bUlzyXxIxKGDyRau5KUu/Yg5ks79OJmu6UXo4cHwEtuFxeAAA="
+  },
+  "content/prompts/motion/kinetic-typography-loop/loop.mp4": {
+    "hash": "b3c1e0540530786c",
+    "width": 720,
+    "height": 720,
+    "duration": 4.5
+  },
+  "content/prompts/motion/kinetic-typography-loop/loop.poster.jpg": {
+    "hash": "4b510f84da8c3d0a",
+    "width": 720,
+    "height": 720,
+    "blur": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAABQAgCdASoQABAAA4BaJbACdLoA4wAEtErp1gAA7JHR3Yn6mlyP6LcQXLyNskCDI00nH4EcpcxHjX/IaF5WqPzT4Af+InxDIdE+HdHdF82/sRFwAAA="
+  },
+  "content/prompts/motion/liquid-gradient-background/loop.mp4": {
+    "hash": "7b281899fea056ce",
+    "width": 720,
+    "height": 720,
+    "duration": 6
+  },
+  "content/prompts/motion/liquid-gradient-background/loop.poster.jpg": {
+    "hash": "eaa644985a91e3c5",
+    "width": 720,
+    "height": 720,
+    "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAwAgCdASoQABAAA4BaJbACdAEU8/ZWdPHa0AD+a/5WPImy9xhqO61h+bmq6l2HTh9blkrI/POBJih1OKp/Nv5gl0mhPOUS/mwA5qpX5bAjwAAA"
+  },
+  "content/prompts/motion/loading-animation-set/loop.mp4": {
+    "hash": "9cb914544f850c18",
+    "width": 720,
+    "height": 720,
+    "duration": 3
+  },
+  "content/prompts/motion/loading-animation-set/loop.poster.jpg": {
+    "hash": "08208d517590614b",
+    "width": 720,
+    "height": 720,
+    "blur": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADwAQCdASoQABAAA4BaJYwAAuRrdngcoTAA/vfy3Aq/3sQtDWemrc3qrGMfF1Yu1wIONlO91faptAAA"
+  },
+  "content/prompts/motion/odometer-number-counter/loop.mp4": {
+    "hash": "ba00ba4b13d84791",
+    "width": 720,
+    "height": 720,
+    "duration": 5
+  },
+  "content/prompts/motion/odometer-number-counter/loop.poster.jpg": {
+    "hash": "ab7a00e3d9997e2f",
+    "width": 720,
+    "height": 720,
+    "blur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAAAQAgCdASoQABAAA4BaJZwAD4uwb7f2WcYAAP72hYirraDh/OuFXM/t9iuUmKF3DXepv69czacKbU+UYrYNghv5oXc4FMW4jpAIAA=="
+  },
+  "content/prompts/motion/orbiting-particles-loop/loop.mp4": {
+    "hash": "821a7ba8d4807d59",
+    "width": 720,
+    "height": 720,
+    "duration": 5
+  },
+  "content/prompts/motion/orbiting-particles-loop/loop.poster.jpg": {
+    "hash": "c7fe32b52242b38e",
+    "width": 720,
+    "height": 720,
+    "blur": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAAAQAgCdASoQABAAA4BaJYgCdAEPAGJDLfAAAP73dJKVa45IspjvzcfRMG7ARbBBeGpbaRq6AAA="
+  },
+  "content/prompts/reports/competitive-analysis/page-1.jpg": {
+    "hash": "0321eea4ec3dcd28",
+    "width": 1191,
+    "height": 1685,
+    "blur": "data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAAAwAQCdASoLABAAA4BaJaQAA3AA/vR/lHjFixIsJAlg1FEHINMbAAAA"
+  },
+  "content/prompts/reports/monthly-kpi-report/page-1.jpg": {
+    "hash": "886cd5cd1ef55f88",
+    "width": 1191,
+    "height": 1685,
+    "blur": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAAAwAQCdASoLABAAA4BaJaQAA3AA/vRJdUneAlhXMfVREuqBdTScwMLbwT28WgAA"
+  },
+  "content/prompts/reports/monthly-kpi-report/page-2.jpg": {
+    "hash": "5de9864be6eda96b",
+    "width": 1191,
+    "height": 1685,
+    "blur": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAAAwAQCdASoLABAAA4BaJZwAA3AA/vSANNtWY0cSw74nMQf/1E54gLvaKKKAAA=="
+  },
+  "content/prompts/reports/quarterly-financial-summary/page-1.jpg": {
+    "hash": "145ee9c75bd9ed27",
+    "width": 1191,
+    "height": 1685,
+    "blur": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADQAQCdASoLABAAA4BaJaQAAu1tKcVwAAD+9hqKTl5QLSZu1WICfsiPBvHBdBoYAAA="
+  },
+  "content/prompts/reports/sales-pipeline-snapshot/page-1.jpg": {
+    "hash": "55201234d262247d",
+    "width": 1191,
+    "height": 1685,
+    "blur": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAABQAQCdASoLABAAA4BaJQBOgDEIAP7x9pKL5e3+XjK3ubgU2ssNwjVxwbbtymMjXj95mAAA"
+  },
+  "content/prompts/reports/survey-results-summary/page-1.jpg": {
+    "hash": "4f838592fd86c257",
+    "width": 1191,
+    "height": 1685,
+    "blur": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAAAwAQCdASoLABAAA4BaJZwAA3AA/vPXe2tkpuxEcn9AHszhjIjcVbi7m98AQAAA"
+  },
+  "content/prompts/reports/user-research-synthesis/page-1.jpg": {
+    "hash": "0aa8da45ea4d57c7",
+    "width": 1191,
+    "height": 1685,
+    "blur": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAQCdASoLABAAA4BaJZwAAujc+V1TFwAA/vUeRa/bhdmXALqbk90wl19OCR4t3SzAAA=="
+  },
+  "content/prompts/ui/command-palette-search/component.thumb.webp": {
+    "hash": "c911a5c46f2b4212",
+    "width": 960,
+    "height": 448,
+    "blur": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAACQAQCdASoQAAcAA4BaJaQAAuBYbQAA/uq3cveMHFVvS2Xp3SliOAI5+yAAAA=="
+  },
+  "content/prompts/ui/command-palette-search/component.thumb.webp#render": {
+    "hash": "e1513da6c562dfa5:560"
+  },
+  "content/prompts/ui/file-upload-dropzone/component.thumb.webp": {
+    "hash": "d6d53a1e9b286b18",
+    "width": 960,
+    "height": 512,
+    "blur": "data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAABQAQCdASoQAAkAA4BaJZwABAAAAP70ATcqcWdW37g43FFvO/AAAA=="
+  },
+  "content/prompts/ui/file-upload-dropzone/component.thumb.webp#render": {
+    "hash": "79bc932a4bd54dd7:640"
+  },
+  "content/prompts/ui/kpi-cards-with-sparklines/component.thumb.webp": {
+    "hash": "38fed3651f412978",
+    "width": 960,
+    "height": 304,
+    "blur": "data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAABwAQCdASoQAAUAA4BaJZQCdAGIQAD+8zZflEURStBnY/HP/4AAAA=="
+  },
+  "content/prompts/ui/kpi-cards-with-sparklines/component.thumb.webp#render": {
+    "hash": "e3e962d720367707:380"
+  },
+  "content/prompts/ui/pricing-table-with-toggle/component.thumb.webp": {
+    "hash": "b02d8a1184b8abbf",
+    "width": 960,
+    "height": 576,
+    "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADQAQCdASoQAAoAA4BaJQAAVD7hreWMAAD+9/FYYU7mEWl+xTBHazQUwuQYgvuAIt7MqrwwypoibJc2z4pDGn3ZbMAgjs0uaAA="
+  },
+  "content/prompts/ui/pricing-table-with-toggle/component.thumb.webp#render": {
+    "hash": "28d71dd03ae7bc48:720"
+  },
+  "content/prompts/ui/sign-in-card-with-social-login/component.thumb.webp": {
+    "hash": "a88726680808e14d",
+    "width": 960,
+    "height": 560,
+    "blur": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAQCdASoQAAkAA4BaJQBOgCHhS2Y0AAD+9gn6J9PQCmw3GNy5hAO2O6waHUlVzcfoJTAA"
+  },
+  "content/prompts/ui/sign-in-card-with-social-login/component.thumb.webp#render": {
+    "hash": "ab9886e57569c41a:700"
+  },
+  "content/prompts/ui/testimonial-marquee/component.thumb.webp": {
+    "hash": "d322a45f701d0f99",
+    "width": 960,
+    "height": 448,
+    "blur": "data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAABQAQCdASoQAAcAA4BaJZwABDOAAP70BROTwqAwSuQkbnGuZAAAAA=="
+  },
+  "content/prompts/ui/testimonial-marquee/component.thumb.webp#render": {
+    "hash": "ed6e1666a0611952:560"
+  },
+  "content/prompts/video/drone-over-desert-dunes/clip.mp4": {
+    "hash": "c235cecff97496f2",
+    "width": 960,
+    "height": 540,
+    "duration": 5
+  },
+  "content/prompts/video/drone-over-desert-dunes/clip.poster.jpg": {
+    "hash": "7d9a6d4500e6a1a2",
+    "width": 960,
+    "height": 540,
+    "blur": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAAAwAgCdASoQAAkAA4BaJbACdLoAAwi8cq5dAAD+eTl5awXBfdg1Prx6okoS2C7Zc9MeftEQd1z0b7hrITDyBfIsgIAAAA=="
+  },
+  "content/prompts/video/forest-light-rays-push-in/clip.mp4": {
+    "hash": "7ac684113d6b9af1",
+    "width": 960,
+    "height": 540,
+    "duration": 5
+  },
+  "content/prompts/video/forest-light-rays-push-in/clip.poster.jpg": {
+    "hash": "e8ba2b2cf642ef0a",
+    "width": 960,
+    "height": 540,
+    "blur": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACwAQCdASoQAAkAA4BaJYwCdACcvVuAAPa+MWcy7qJg4ijVvDYnp/WujcNrPxPaj33+O40SAEjLw9QXS5jimc+kgcXAAA=="
+  },
+  "content/prompts/video/mountain-cloud-timelapse/clip.mp4": {
+    "hash": "96e4af4c47e3af5b",
+    "width": 960,
+    "height": 540,
+    "duration": 5
+  },
+  "content/prompts/video/mountain-cloud-timelapse/clip.poster.jpg": {
+    "hash": "1553c776cf696e54",
+    "width": 960,
+    "height": 540,
+    "blur": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAAAQAgCdASoQAAkAA4BaJZACdAEVlYgFe8wAAP6RtF2nSnd8FY6cfuQvJa7c/N9h7xUMCinTDzVdmAmRK0aIFCvN3sVAAA=="
+  },
+  "content/prompts/video/neon-city-in-the-rain/clip.mp4": {
+    "hash": "98acf873d1faea84",
+    "width": 960,
+    "height": 540,
+    "duration": 4
+  },
+  "content/prompts/video/neon-city-in-the-rain/clip.poster.jpg": {
+    "hash": "027e068be3b30ed4",
+    "width": 960,
+    "height": 540,
+    "blur": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAAAwAQCdASoQAAkAA4BaJYwAA3AA/vPxbsA+rB5/hbI8Cc9NK36XZhn7J+6u3c+YXxAAAA=="
+  },
+  "content/prompts/video/ocean-sunset-dolly/clip.mp4": {
+    "hash": "f0e0fad75348b44a",
+    "width": 960,
+    "height": 540,
+    "duration": 4
+  },
+  "content/prompts/video/ocean-sunset-dolly/clip.poster.jpg": {
+    "hash": "4d9553e52f9f67d5",
+    "width": 960,
+    "height": 540,
+    "blur": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAACwAQCdASoQAAkAA4BaJZACdAEOtW9oAP6jfG8LvqvkGzx+jITZdGzYhbSLzIFHpwGdw19Dz/3YZJjVOhT/AAAA"
+  },
+  "content/prompts/video/product-turntable-spin/clip.mp4": {
+    "hash": "97b06058b11988c1",
+    "width": 960,
+    "height": 540,
+    "duration": 4
+  },
+  "content/prompts/video/product-turntable-spin/clip.poster.jpg": {
+    "hash": "71d5619866c5780b",
+    "width": 960,
+    "height": 540,
+    "blur": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADQAQCdASoQAAkAA4BaJZgCdAEQUIl7IAD+9NzxFrhf31cFbgAJsqDsGM99qniAtyH8+lUkezfugy3wpgVSlEAA"
+  }
+}

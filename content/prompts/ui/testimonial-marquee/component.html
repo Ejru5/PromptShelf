@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Testimonial marquee</title>
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; background: #fff7ed; color: #1c1917; padding: 48px 0; overflow: hidden; }
+  .intro { text-align: center; padding: 0 24px; }
+  .eyebrow { display: inline-block; font-size: 12px; font-weight: 700; color: #c2410c; background: #ffedd5; padding: 5px 12px; border-radius: 999px; }
+  h1 { font-size: clamp(26px, 4vw, 38px); letter-spacing: -0.03em; margin-top: 14px; }
+  .rows { margin-top: 36px; display: grid; gap: 16px; mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+  .row { display: flex; gap: 16px; width: max-content; animation: scroll 38s linear infinite; }
+  .row.rev { animation-direction: reverse; animation-duration: 44s; }
+  .rows:hover .row { animation-play-state: paused; }
+  @keyframes scroll { to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .row { animation: none; } }
+  .card { width: 320px; flex: none; background: #fff; border: 1px solid #fed7aa; border-radius: 18px; padding: 18px; }
+  .stars { color: #f59e0b; letter-spacing: 2px; font-size: 13px; }
+  .quote { font-size: 14px; line-height: 1.55; margin-top: 10px; color: #292524; }
+  .who { display: flex; align-items: center; gap: 10px; margin-top: 14px; }
+  .av { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 13px; color: #fff; }
+  .who b { display: block; font-size: 13px; }
+  .who span { font-size: 12px; color: #78716c; }
+</style>
+</head>
+<body>
+<div class="intro"><span class="eyebrow">Loved by 4,000+ teams</span><h1>Don't take our word for it</h1></div>
+<div class="rows"><div class="row" id="r1"></div><div class="row rev" id="r2"></div></div>
+<script>
+  const t = [
+    ['We replaced three tools with this in a week. Our standups are half as long now.', 'Priya Natarajan', 'Head of Ops, Loom & Co', '#f97316'],
+    ['The onboarding is so good my least technical teammate set up our whole workspace.', 'Marcus Webb', 'Founder, Driftwood', '#0ea5e9'],
+    ['Support replied in four minutes on a Sunday. I didn\'t know that was possible.', 'Elena Sokolova', 'PM, Northbeam', '#8b5cf6'],
+    ['Honestly the keyboard shortcuts alone are worth the price.', 'Daniel Osei', 'Engineer, Fieldnote', '#10b981'],
+    ['Our clients comment on how polished the reports look. That\'s new for us.', 'Hana Kimura', 'Studio lead, Ume', '#ec4899'],
+    ['It just stays out of the way. Fast, calm, and never loses anything.', 'Tom Brennan', 'Writer', '#eab308'],
+  ];
+  const card = ([q, n, r, c]) => '<figure class="card"><div class="stars">★★★★★</div><blockquote class="quote">“' + q + '”</blockquote><figcaption class="who"><span class="av" style="background:' + c + '">' + n.split(' ').map((s) => s[0]).join('') + '</span><span><b>' + n + '</b><span>' + r + '</span></span></figcaption></figure>';
+  const a = t.map(card).join(''), b = t.slice().reverse().map(card).join('');
+  document.getElementById('r1').innerHTML = a + a;
+  document.getElementById('r2').innerHTML = b + b;
+</script>
+</body>
+</html>

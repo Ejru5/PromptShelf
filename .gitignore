@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# testing
+/test-results
+/playwright-report
+
+# generated content (npm run content)
+/src/content/.generated
+/public/results
